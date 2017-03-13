@@ -1,4 +1,5 @@
 <h1>Welcome#about</h1>
 <p>Find me in app/views/welcome/about.html.erb</p>
 
-<button class="social-btn"><%= link_to "Follow me", "https://www.facebook.com/daryl.mccullough.7", class: "social-btn" %></button>
+<!-- from: https://mixandgo.com/blog/how-to-use-link_to-in-rails -->
+<%= link_to "<button class='social-btn' type='submit'>Follow me</button>".html_safe, "https://www.facebook.com/daryl.mccullough.7" %>
