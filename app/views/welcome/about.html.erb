@@ -2,4 +2,7 @@
 <p>Find me in app/views/welcome/about.html.erb</p>
 
 <!-- from: https://mixandgo.com/blog/how-to-use-link_to-in-rails -->
-<%= link_to "<button class='social-btn' type='submit'>Follow me</button>".html_safe, "https://www.facebook.com/daryl.mccullough.7" %>
+
+<%= link_to "https://www.facebook.com/daryl.mccullough.7"  do %>
+<button class='social-btn' type='submit'>Follow me</button>
+<% end %>
