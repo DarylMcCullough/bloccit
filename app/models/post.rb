@@ -7,7 +7,10 @@ class Post < ActiveRecord::Base
         end
     end
     
-    def test
-        puts "Just testing"
+    def self.mark_all_spam
+        self.all.each do |post|
+            post.mark_spam
+        end
     end
+    
 end
