@@ -36,7 +36,22 @@
      
  puts "unique post: #{post.to_s}"
  puts "unique comment: #{comment.to_s}"
+ 
+ 
+ # Create Advertisements
+ 5.times do
+ # #1
+   Advertisement.create!(
+ # #2
+     title:  RandomData.random_sentence,
+     body:   RandomData.random_paragraph,
+     price: 12.99
+   )
+ end
+ posts = Post.all
 
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
+ 
+ 
