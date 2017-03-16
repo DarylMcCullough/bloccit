@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = []
+    Post.all.each do |post|
+      post.title = "SPAM" if post.id.to_i % 5 == 0
+      @posts << post
+    end
   end
 
   def show
