@@ -19,6 +19,16 @@
      sentence = strings.join(" ")
      sentence.capitalize << "."
    end
+   
+   def self.random_question
+     strings = []
+     rand(3..8).times do
+       strings << random_word
+     end
+ 
+     sentence = strings.join(" ")
+     sentence.capitalize << "?"
+   end
  
  # #8
    def self.random_word

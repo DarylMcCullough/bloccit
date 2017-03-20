@@ -16,7 +16,7 @@
  # #1
    Question.create!(
  # #2
-     title:  "#{RandomData.random_sentence}?",
+     title:  RandomData.random_question,
      body:   RandomData.random_paragraph,
      resolved: false
    )
