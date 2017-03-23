@@ -30,6 +30,18 @@
    )
  end
  
+  # Create SponsoredPosts
+ 10.times do
+ # #1
+   SponsoredPost.create!(
+     topic:  topics.sample,
+     title:  RandomData.random_sentence,
+     body:   RandomData.random_paragraph,
+     price: 12
+   )
+ end
+ sponsored_posts = SponsoredPost.all
+ 
  unique_post_title = "A Very Special Title"
  unique_post_body = "What a great body!"
  
@@ -49,4 +61,5 @@
  puts "Seed finished"
  puts "#{Topic.count} topics created"
  puts "#{Post.count} posts created"
+  puts "#{SponsoredPost.count} sponsored posts created"
  puts "#{Comment.count} comments created"
