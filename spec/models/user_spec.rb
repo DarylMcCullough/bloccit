@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-    let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "password") }
+    let(:user) { User.create!(name: "bloccit user", email: "user@bloccit.com", password: "password") }
     # Shoulda tests for name
+
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_length_of(:name).is_at_least(1) }
- 
+    
     # Shoulda tests for email
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_uniqueness_of(:email) }
@@ -18,8 +19,14 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_length_of(:password).is_at_least(6) }
  
     describe "attributes" do
-        it "should have name and email attributes" do
-            expect(user).to have_attributes(name: "Bloccit User", email: "user@bloccit.com")
+        
+        it "should have email attributes" do
+            expect(user).to have_attributes( email: "user@bloccit.com")
+        end
+
+        it "should have first and last names capitalized after save" do
+            user.save
+            expect(user).to have_attributes(name: "Bloccit User")
         end
     end
     
