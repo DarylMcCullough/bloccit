@@ -17,23 +17,11 @@
  @import "bootstrap";
  
   .user-info {
-   margin-top: 9px;
+   margin-top: 5px;
+   margin-right: 5px;
+   display: inline-block;
  }
  
  .nav {
    margin-top: 5px;
  }
- 
-.logout .user-name {
- font-size:large;
-}
-
-.logout .sign-out {
- font-size:large;
-}
-
-.logout .avatar {
- float: right;
- height: 60%;
- width: 60%;
-}
