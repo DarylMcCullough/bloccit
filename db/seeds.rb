@@ -8,7 +8,7 @@
    )
  end
  topics = Topic.all
-
+ 
  # Create Posts
  50.times do
  # #1
@@ -29,22 +29,6 @@
      body: RandomData.random_paragraph
    )
  end
- 
- unique_post_title = "A Very Special Title"
- unique_post_body = "What a great body!"
- 
- post = Post.find_or_create_by!(
-     title: unique_post_title,
-     body: unique_post_body)
-
- another_body = "Another really great body!"
-
- comment = Comment.find_or_create_by!(
-     body: another_body,
-     post: post)
-     
- puts "unique post: #{post.to_s}"
- puts "unique comment: #{comment.to_s}"
 
  puts "Seed finished"
  puts "#{Topic.count} topics created"
