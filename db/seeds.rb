@@ -9,11 +9,23 @@
  end
  topics = Topic.all
 
+ # Create Users
+ 5.times do
+   User.create!(
+ # #3
+   name:     RandomData.random_name,
+   email:    RandomData.random_email,
+   password: RandomData.random_sentence
+   )
+ end
+ users = User.all
+
  # Create Posts
  50.times do
  # #1
    Post.create!(
      topic:  topics.sample,
+     user: users.sample,
      title:  RandomData.random_sentence,
      body:   RandomData.random_paragraph
    )
@@ -30,23 +42,15 @@
    )
  end
  
- unique_post_title = "A Very Special Title"
- unique_post_body = "What a great body!"
- 
- post = Post.find_or_create_by!(
-     title: unique_post_title,
-     body: unique_post_body)
 
- another_body = "Another really great body!"
-
- comment = Comment.find_or_create_by!(
-     body: another_body,
-     post: post)
-     
- puts "unique post: #{post.to_s}"
- puts "unique comment: #{comment.to_s}"
+  user = User.first
+  user.update_attributes!(
+   email: 'stevendaryl3016@yahoo.com', # replace this with your personal email
+   password: 'helloworld'
+ )
 
  puts "Seed finished"
  puts "#{Topic.count} topics created"
+ puts "#{User.count} users created"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
