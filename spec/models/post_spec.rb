@@ -30,6 +30,21 @@ RSpec.describe Post, type: :model do
      end
    end
    
+   describe "creator votes" do
+
+      it "has one vote" do
+        expect(post.votes.length).to eq(1)
+       end
+       
+       it "has voter equal to creator" do
+        expect(post.votes.first.user).to eq(user)
+       end
+       
+       it "has one upvote" do
+        expect(post.votes.first.value).to eq(1)
+       end
+    end
+   
    
    describe "voting" do
      before do
