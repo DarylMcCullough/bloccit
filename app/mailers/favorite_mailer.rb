@@ -13,4 +13,12 @@
  
      mail(to: user.email, subject: "New comment on #{post.title}")
    end
+   
+   def test_mail()
+     headers["Message-ID"] = "<comments/42@your-app-name.example>"
+     headers["In-Reply-To"] = "<post/27@your-app-name.example>"
+     headers["References"] = "<post/76@your-app-name.example>"
+ 
+     mail(to: "stevendaryl3016@yahoo.com", subject: "Howdy")
+    end
  end

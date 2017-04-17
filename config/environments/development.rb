@@ -39,6 +39,6 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   
-   config.action_mailer.default_url_options = { host: '0.0.0.0:8080' }
+   config.action_mailer.default_url_options = { host: 'https://ide.c9.io/darylmcc/bloc-foundation' }
    config.raise_delivery_errors = true
 end
