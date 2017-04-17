@@ -31,7 +31,17 @@ RSpec.describe Post, type: :model do
      end
    end
    
-   
+   describe "creator favorites" do
+
+      it "has one favorite" do
+        expect(post.favorites.length).to eq(1)
+       end
+       
+       it "has favorite user equal to creator" do
+        expect(post.votes.first.user).to eq(user)
+       end
+    end
+    
    describe "voting" do
      before do
        3.times { post.votes.create!(value: 1) }
