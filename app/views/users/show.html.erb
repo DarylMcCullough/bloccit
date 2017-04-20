@@ -30,3 +30,12 @@
  <h2>Comments</h2>
  <%= render @user.comments %>
  <% end %>
+ 
+ 
+ <% if any_favorites(@user) %>
+ <h2>Favorite Posts</h2>
+ <% @user.favorites.each do |favorite| %>
+  <%= render partial: 'posts/favorite_post', locals: {post: favorite.post} %>
+<% end %>
+<% end %>
+ 
